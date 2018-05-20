@@ -10,6 +10,7 @@ from forms import (
     SeedForm,
     RegisterForm,
     LoginForm,
+    ForgotForm,
 )
 
 from untrusted import untrusted
@@ -43,32 +44,32 @@ def home():
     return untrusted(form.seed.data)
 
 
-@app.route('/.well-known/acme-challenge/<_content>')
-def acme_challenge(_content):
-    return 'lmUcOkeLlPM9oTQjVZPxAr6z-k9QNTqOUeiSXErtO6c.fQqRAuyzPCr0VNaJE2k7nzI4zN7bFmWZUg5qvBvOe94'  # noqa
-
-
-@app.route('/about')
-def about():
-    return render_template('pages/about.html')
-
-
-@app.route('/login')
-def login():
-    form = LoginForm(request.form)
-    return render_template('forms/login.html', form=form)
-
-
-@app.route('/register')
-def register():
-    form = RegisterForm(request.form)
-    return render_template('forms/register.html', form=form)
-
-
-@app.route('/forgot')
-def forgot():
-    form = ForgotForm(request.form)
-    return render_template('forms/forgot.html', form=form)
+# @app.route('/.well-known/acme-challenge/<_content>')
+# def acme_challenge(_content):
+#     return 'lmUcOkeLlPM9oTQjVZPxAr6z-k9QNTqOUeiSXErtO6c.fQqRAuyzPCr0VNaJE2k7nzI4zN7bFmWZUg5qvBvOe94'  # noqa
+#
+#
+# @app.route('/about')
+# def about():
+#     return render_template('pages/about.html')
+#
+#
+# @app.route('/login')
+# def login():
+#     form = LoginForm(request.form)
+#     return render_template('forms/login.html', form=form)
+#
+#
+# @app.route('/register')
+# def register():
+#     form = RegisterForm(request.form)
+#     return render_template('forms/register.html', form=form)
+#
+#
+# @app.route('/forgot')
+# def forgot():
+#     form = ForgotForm(request.form)
+#     return render_template('forms/forgot.html', form=form)
 
 
 @app.errorhandler(500)
