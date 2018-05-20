@@ -12,7 +12,7 @@ from forms import (
     LoginForm,
 )
 
-from trusted import trusted
+from untrusted import untrusted
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -40,7 +40,7 @@ def home():
     if request.method == 'GET':
         return render_template('forms/seed.html', form=form)
 
-    return trusted(form.seed.data)
+    return untrusted(form.seed.data)
 
 
 @app.route('/.well-known/acme-challenge/:content'):
