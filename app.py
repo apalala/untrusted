@@ -43,9 +43,9 @@ def home():
     return untrusted(form.seed.data)
 
 
-@app.route('/.well-known/acme-challenge/:content'):
-def acme_challeng():
-  return 'xxxxxxxxxxxx-yyyy.zzzzzzzzzzzzzzzzzzz'
+@app.route('/.well-known/acme-challenge/:content')
+def acme_challenge(content):
+    return 'xxxxxxxxxxxx-yyyy.zzzzzzzzzzzzzzzzzzz'
 
 
 @app.route('/about')
