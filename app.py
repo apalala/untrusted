@@ -43,8 +43,8 @@ def home():
     return untrusted(form.seed.data)
 
 
-@app.route('/.well-known/acme-challenge/lmUcOkeLlPM9oTQjVZPxAr6z-k9QNTqOUeiSXErtO6c')
-def acme_challenge():
+@app.route('/.well-known/acme-challenge/<_content>')
+def acme_challenge(_content):
     return 'lmUcOkeLlPM9oTQjVZPxAr6z-k9QNTqOUeiSXErtO6c.fQqRAuyzPCr0VNaJE2k7nzI4zN7bFmWZUg5qvBvOe94'  # noqa
 
 
